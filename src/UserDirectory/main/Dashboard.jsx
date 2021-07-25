@@ -38,6 +38,7 @@ const Dashboard = () => {
             .toLowerCase()
             .includes(search.toLowerCase());
         });
+        console.log(newUser);
         const filteredData = newUser.slice(current, lastData);
         setSearchResult(filteredData);
         const totalPages = Math.ceil(newUser.length / 10);
@@ -79,7 +80,7 @@ const Dashboard = () => {
       <div>
         <input
           ref={inputEl}
-          placeholder="Search by location"
+          placeholder="Search by any string"
           onChange={(e) => handleSearch(e)}
           value={search}
           type="text"
