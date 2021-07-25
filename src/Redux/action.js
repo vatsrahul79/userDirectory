@@ -34,8 +34,7 @@ export const deleteUser = (id) => {
     return function (dispatch) {
       axios
         .delete(`http://localhost:5000/users/${id}`)
-        .then((resp) => {
-          console.log("resp", resp);
+        .then((res) => {
           dispatch(userDeleted());
           dispatch(loadUser());
         })
@@ -49,8 +48,7 @@ export const addUser = (user) => {
     return function (dispatch) {
       axios
         .post(`http://localhost:5000/users}`, user)
-        .then((resp) => {
-          console.log("resp", resp);
+        .then((res) => {
           dispatch(userAdded());
           dispatch(loadUser());
         })
@@ -64,8 +62,7 @@ export const addUser = (user) => {
     return function (dispatch) {
       axios
         .put(`http://localhost:5000/users/${id}`, user)
-        .then((resp) => {
-          console.log("resp", resp);
+        .then((res) => {
           dispatch(userUpdated());
         })
         .catch((error) => console.log(error));
